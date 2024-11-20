@@ -106,6 +106,8 @@ function refreshPendingOrders() {
                 row.innerHTML = `
                     <td>${order.customer_name}</td>
                     <td>${order.customer_address}</td>
+                    <td>${order.products}</td>
+                    <td>${order.quantity}</td>
                     <td>${order.estimated_delivery}</td>
                     <td>${order.status}</td>
                     <td>

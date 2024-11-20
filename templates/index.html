@@ -32,6 +32,8 @@
                 <tr>
                     <th>Customer Name</th>
                     <th>Address</th>
+                    <th>Products</th>
+                    <th>Quantity</th>
                     <th>Estimate Time</th>
                     <th>Current Status</th>
                     <th>Update Status</th>
@@ -42,6 +44,8 @@
                 <tr>
                     <td>{{ order['customer_name'] }}</td>
                     <td>{{ order['customer_address'] }}</td>
+                    <td>{{ order['products']  }}</td>
+                    <td>{{ order['quantity'] }}</td>
                     <td>{{ order['estimated_delivery'] }}</td>
                     <td class="current-status">{{ order['status'] }}</td>
                     <td>
