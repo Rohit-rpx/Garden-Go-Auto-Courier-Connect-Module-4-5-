@@ -24,6 +24,7 @@ class Order(db.Model):
     pincode = db.Column(db.Integer, nullable=False)
     courier_id = db.Column(db.Integer, db.ForeignKey('courier.courier_id'), nullable=False)
     status = db.Column(db.String(50), nullable=False, default='Pending')
+    estimated_delivery = db.Column(db.Date, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now(timezone.utc))
     updated_at = db.Column(db.DateTime, default=datetime.now(timezone.utc), onupdate=datetime.now(timezone.utc))
 
@@ -42,3 +43,4 @@ class Audit(db.Model):
 
     order = db.relationship('Order', back_populates='audit_logs')
     courier = db.relationship('Courier', back_populates='audit_logs')
+

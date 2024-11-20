@@ -20,6 +20,7 @@ def get_assigned_orders(courier_id):
         'customer_address': order.customer_address+', '+str(order.pincode),
         'customer_phone': order.customer_phone,
         'status': order.status,
+        'estimated_delivery':order.estimated_delivery,
         'created_at': order.created_at,
         'updated_at': order.updated_at
     } for order in orders]
@@ -63,6 +64,7 @@ def log_audit_entry(order_id, new_status, updated_by, reason=None):
     print(updated_by)
     db.session.add(audit_entry)
     db.session.commit()
+
 
 if __name__ == '__main__':
     with app.app_context():

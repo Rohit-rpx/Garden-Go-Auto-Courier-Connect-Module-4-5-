@@ -18,7 +18,7 @@ function restrictStatusChanges() {
     const tableRows = document.querySelectorAll('#pending-orders-table tbody tr');
     
     tableRows.forEach(row => {
-        const currentStatus = row.querySelector('td:nth-child(3)').textContent.trim();
+        const currentStatus = row.querySelector('td:nth-child(4)').textContent.trim();
         const statusDropdown = row.querySelector('.status-dropdown');
         
         // Disable options that aren't allowed based on the current status
@@ -106,6 +106,7 @@ function refreshPendingOrders() {
                 row.innerHTML = `
                     <td>${order.customer_name}</td>
                     <td>${order.customer_address}</td>
+                    <td>${order.estimated_delivery}</td>
                     <td>${order.status}</td>
                     <td>
                         <select class="status-dropdown">
