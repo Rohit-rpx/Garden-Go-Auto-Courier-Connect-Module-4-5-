@@ -120,6 +120,7 @@ function refreshPendingOrders() {
                     </td>
                 `;
                 ordersTableBody.appendChild(row);
+                console.log(order.estimated_delivery)
             });
 
             // Reapply the status change restrictions

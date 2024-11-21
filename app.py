@@ -22,7 +22,7 @@ def get_assigned_orders(courier_id):
         'products': synthetic_order_list.get(order.order_id),
         'quantity': synthetic_quantity.get(order.order_id),
         'status': order.status,
-        'estimated_delivery':order.estimated_delivery,
+        'estimated_delivery':order.estimated_delivery.strftime('%Y-%m-%d'),
         'created_at': order.created_at,
         'updated_at': order.updated_at
     } for order in orders]
